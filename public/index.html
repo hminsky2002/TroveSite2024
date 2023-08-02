@@ -1,42 +1,111 @@
 <!--generate the boilerplate for a static html site-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trove</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="header">
-            <img src="img/logo.png" alt="logo" id="draggableImage">
-        <div id="typewriter" class="typewriter">Trove Theater Company</div>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="navbar">
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#treasures">TREASURES</a></li>
+        <li><a href="#trinkets">TRINKETS</a></li>
+        <li><a href="#transmissions">TRANSMISSIONS</a></li>
+      </ul>
+    </div>
+    <div class="mainHeader" id="about">
+      <img src="img/logo.png" alt="logo" id="draggableImage" />
+      <h2>Trove Theater Company</h2>
     </div>
 
+    <div class="information">
+      Trove is a New York City-based theatre and live arts collective. Trove is
+      a rejection of the scarcity mindset in favor of lightness, community, and
+      the belief that we already have everything we need. Trove is having fun
+      while making radical, delightful, really good art with and for the people
+      we love. <span id="trove-forever">Trove forever!</span>
     </div>
-    <div class="maintext">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-     when an unknown printer took a galley of type and scrambled it to make a type
-     specimen book. It has survived not only five centuries, but also the leap into
-     electronic typesetting, remaining essentially unchanged. It was popularised in
-     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-     and more recently with desktop publishing software like Aldus PageMaker including
-     versions of Lorem Ipsum.
+    <div class="information">
+      Our next project is Drive the Speed Limit, August 3-5 at HERE Arts Center.
+    </div>
+    <div class="sectionHeader" id="treasures">Treasures</div>
+    <div class="information">
+      Treasures are full-length, public performances, offering space for artists
+      to present their work.
     </div>
     <div class="latestPoster">
-        <img src="img/drivethespeedlimit.png" alt="poster for drive the speed limit play">
+      <img src="img/DTSL.png" alt="poster for drive the speed limit play" />
+    </div>
+
+    <div class="information">
+      Our first Treasure is Drive the Speed Limit, written by Penelope Gould and
+      directed by Marina Carlstroem.
+      <br />
+      Drive the Speed Limit is a play about Eve, a chronically ill and fat
+      teenager struggling to understand her body while navigating her artist
+      mother and wacky grandmother’s opposing views of what it looks and feels
+      like to be healthy.
+      <br />
+      Moving between the doctor’s office, school, and home in the passenger
+      seat, Eve sifts through her days while in pain.
+      <br />
+      Shadow puppets animate what is going on in her body, making this battle
+      visible.
+      <br />
+      Everyone responds to Eve’s sickness in their own way. Her mother is unable
+      to find her artistic spark.
+      <br />
+      Her grandmother dives deeper into her faith. The doctors don’t accept her
+      insurance.
+    </div>
+    <div class="sectionHeader" id="trinkets">Trinkets</div>
+    <div class="information">
+      Trinkets are short, public performances, offering space for artists to
+      present their work.
+    </div>
+    <div class="carousel-container">
+        <button class="carousel-btn left-btn"><img src="img/leftarrow.png" alt="Left Arrow"></button>
+        <img class="carousel-img" src="img/Trinket_1.jpg" alt="Carousel Image">
+        <button class="carousel-btn right-btn"><img src="img/rightarrow.png" alt="Right Arrow"></button>
+    </div>
+    <div class="sectionHeader" id="transmissions">Transmissions</div>
+    <div class="information">
+      Join our email list to be notified about public performances and
+      opportunities to get involved with Trove!
     </div>
     <div class="form-container">
-        <form action="/submit_email" method="post">
-            <label for="email">Enter your email:</label>
-            <input type="email" id="email" name="email" required>
-            <input type="submit" value="Submit">
-        </form>
+      <form action="/submit_email" method="post">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
-    
-    <script src="main.js"></script>
-</body>
 
+    <script src="main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('a[href^="#"]').on("click", function (e) {
+          e.preventDefault();
+
+          var target = this.hash;
+          var $target = $(target);
+
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: $target.offset().top - 80,
+              },
+              900,
+              "swing"
+            );
+        });
+      });
+    </script>
+  </body>
 </html>

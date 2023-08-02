@@ -1,59 +1,16 @@
-let typewriter = document.getElementById('typewriter');
-let typewriterText = typewriter.textContent;
-let typewriterSpeed = 100;
-let i = 0;
 
-typewriter.textContent = '';
+let colorIndex = 0;
+let colors = ["#ffd8ef", "#ffe7cc", "#ddf2e2", "#e8f1fe", "#f4e1ff"];
+let messages = ['Trove is Powerful!',"Trove is Kind!", "Trove becomes us all!", "Trove sees through me!", "Trove is funny, haha!"]
+let spanElement = document.getElementById("trove-forever");
+let imageElement = document.getElementById("draggableImage");
+let bodyElement = document.body;
+let navbarElement = document.getElementById("navbar");
 
-function typeWriter() {
-    if (i < typewriterText.length) {
-        typewriter.textContent += typewriterText.charAt(i);
-        i++;
-        setTimeout(typeWriter, typewriterSpeed);
-    } else{
-        typewriter.style.borderRight = 'none';
-    }
-
-}
-
-typeWriter();
-
-let img = document.getElementById('draggableImage');
-let isDragging = false;
-let offsetX, offsetY;
-let placeholder;
-let placeHolderPlaced = false;
-img.addEventListener('mousedown', function(e) {
-    isDragging = true;
+imageElement.addEventListener("click", function() {
+    spanElement.textContent = messages[colorIndex];
+    bodyElement.style.backgroundColor = colors[colorIndex];
+    navbarElement.style.backgroundColor = colors[colorIndex];
     
-    // Create a placeholder div and insert it before the original image.
-    if(placeHolderPlaced === false){
-    placeholder = document.createElement('div');
-    placeholder.style.width = img.offsetWidth + 'px';
-    placeholder.style.height = img.offsetHeight + 'px';
-    img.parentNode.insertBefore(placeholder, img);
-    placeHolderPlaced = true;
-    }
-    // Change the original image to absolute positioning.
-    img.style.position = 'absolute';
-    img.src = "img/logoInverse.png"
-    document.body.style.backgroundColor = 'black';
-document.body.style.color = 'white';
-    offsetX = e.clientX - img.getBoundingClientRect().left;
-    offsetY = e.clientY - img.getBoundingClientRect().top;
-    e.preventDefault();
-});
-
-document.addEventListener('mousemove', function(e) {
-    if (isDragging) {
-        img.style.left = (e.clientX - offsetX) + 'px';
-        img.style.top = (e.clientY - offsetY) + 'px';
-    }
-});
-
-document.addEventListener('mouseup', function() {
-    isDragging = false;
-    img.src = "img/logo.png"
-    document.body.style.backgroundColor = 'white';
-document.body.style.color = 'black';
+    colorIndex = (colorIndex + 1) % colors.length;
 });

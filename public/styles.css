@@ -1,82 +1,94 @@
 @font-face {
     font-family: terminal-grotesque;
     src: url(fonts/terminal-grotesque.ttf);
-  }
+}
+
 @font-face {
     font-family: terminal-grotesque-open;
     src: url(fonts/terminal-grotesque_open.otf);
-  }
-  
+}
 
-  body {
+
+@font-face {
+    font-family: FT-88-Bold;
+    src: url(fonts/FT88-Bold.otf);
+}
+@font-face {
+    font-family: alagard;
+    src: url(fonts/alagard.ttf);
+}
+
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 30px;
     box-sizing: border-box;
-    font-family: terminal-grotesque,"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
-.form-container {
+
+
+.mainHeader {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 2em;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allows the items to wrap onto multiple lines */
+    padding: 20px; /* Add some padding around */
+    font-family: alagard;
+    font-size: 1.6em;
+    text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-}
-
-input[type="email"] {
-    margin: 0.5em 0;
-    padding: 0.5em;
-    width: 100%;
-}
-
-input[type="submit"] {
-    font-family: terminal-grotesque-open, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: white;
-    padding: 0.5em;
-    width: 50%;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 80%;
-}
-
-.header img {
-    width: 50%; /* adjust as needed */
+.mainHeader img {
+    width: 40%;
     height: auto;
 }
 
-.typewriter {
+.sectionHeader {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allows the items to wrap onto multiple lines */
+    padding: 20px; /* Add some padding around */
+    font-family: alagard;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* .typewriter {
     font-family: terminal-grotesque-open, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 2em;
     font-weight: 2000;
-    border-right: .15em solid black; /* The typewriter cursor */
+    border-right: .15em solid black;
     white-space: nowrap;
     overflow: hidden;
     letter-spacing: .01em;
     margin-top: 1em;
+} */
+
+.information {
+    /* This will center the div on the page */
+
+    text-align: center;
+    font-family: terminal-grotesque, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    max-width: 900px; 
+    /* word-wrap: break-word; */
+    margin: 0 auto; 
+    
+    padding-top: 20px; 
+    padding-bottom: 20px;
+
+    box-sizing: border-box;
+
+    width: 90%; 
 }
 
-.maintext {
-    width: 80%;
-    font-size: 1.6npmem;
-    text-align: justify;
-    margin: 100px auto 0;
-}
+
 .latestPoster img {
     width: 80%;
     max-width: 80%;
@@ -85,20 +97,96 @@ input[type="submit"] {
     display: block;
 }
 
+#navbar {
+    background-color: white;
+    font-family: alagard;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+
+}
+
+#navbar ul::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: black;
+
+}
+
+#navbar ul li {
+    padding: 2vw;
+}
+
+#navbar ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover {
+    color: grey;
+}
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px; /* You can adjust this value */
+}
+
+.carousel-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-btn img {
+    width: 30px; /* You can adjust this value */
+    height: 30px; /* You can adjust this value */
+}
+
+
 
 
 
 @media screen and (min-width: 600px) {
-    body {
-        align-items: flex-start;
+    .mainHeader img {
+        width: 20%;
+        height: auto;
     }
-
-    .header {
-        flex-direction: row;
+    .body{
+        padding: 60px;
     }
-
-    .typewriter {
-        margin-top: 0;
-        margin-left: 1em;
+    .mainHeader{
+        margin-top: 5%;
+    }
+    #navbar ul li{
+        font-size: 2em;
+    }
+    .latestPoster{
+        max-width: 800px;
+    }
+    .carousel-btn img {
+        width: 60px; /* You can adjust this value */
+        height: 60px; /* You can adjust this value */
     }
 }
