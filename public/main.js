@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     "img/Trinket_1.jpg",
     "img/Trinket_2.jpg",
     "img/Trinket_3.jpg",
+    "img/mrticket.gif",
   ];
   var currentImageIndex = 0;
 

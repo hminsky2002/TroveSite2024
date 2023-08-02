@@ -41,7 +41,7 @@ p{
     flex-wrap: wrap; /* Allows the items to wrap onto multiple lines */
     padding: 20px; /* Add some padding around */
     font-family: alagard;
-    font-size: 1.6em;
+    font-size: 2.2em;
     text-align: center;
 }
 
@@ -95,7 +95,7 @@ p{
     width: 80%;
     max-width: 80%;
     height: auto;
-    margin: 100px auto 0;
+    margin: 1px auto 0;
     display: block;
 }
 
@@ -179,6 +179,7 @@ p{
   .gif {
     margin: 0 30px; /* Adjust as needed */
     width: 100px;
+    height: 40px;
   }
 
 
@@ -186,12 +187,15 @@ p{
     .mainHeader img {
         width: 20%;
         height: auto;
+        
     }
     .body{
         padding: 60px;
     }
     .mainHeader{
         margin-top: 5%;
+        font-size: 3em;
+
     }
     #navbar ul li{
         font-size: 2em;
@@ -208,11 +212,12 @@ p{
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 600px; /* You can adjust this value */
+        height: 400px; /* You can adjust this value */
     }
     .gif {
         margin: 0 30px; /* Adjust as needed */
-        width: 200px;
+        width: 150px;
+        height: 80px;
       }
      .email{
        width: 200px;
