@@ -33,6 +33,16 @@
     <div class="information">
       Our next project is Drive the Speed Limit, August 3-5 at HERE Arts Center.
     </div>
+    <div class="gif-container">
+        <div class="gif-item" id="tickets">
+          <img class="gif" src="img/ticket3.gif" alt="GIF 1">
+          <p>Tickets</p>
+        </div>
+        <div class="gif-item" id="information">
+          <img class="gif" src="img/info_md_wht.gif" alt="GIF 2">
+          <p>Information</p>
+        </div>
+      </div>
     <div class="sectionHeader" id="treasures">Treasures</div>
     <div class="information">
       Treasures are full-length, public performances, offering space for artists
@@ -76,17 +86,11 @@
     <div class="sectionHeader" id="transmissions">Transmissions</div>
     <div class="information">
       Join our email list to be notified about public performances and
-      opportunities to get involved with Trove!
+      opportunities to get involved with Trove! Just click our button
     </div>
-    <div class="form-container">
-      <form action="/submit_email" method="post">
-        <label for="email">Enter your email:</label>
-        <input type="email" id="email" name="email" required />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
-
-    <script src="main.js"></script>
+    <img id="email" class="email clickable-image" src="img/email.gif">
+    
+    <script  src="main.js" id="email"></script>
     <script>
       $(document).ready(function () {
         $('a[href^="#"]').on("click", function (e) {

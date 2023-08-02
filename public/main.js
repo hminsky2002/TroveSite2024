@@ -1,11 +1,12 @@
 let colorIndex = 0;
-let colors = ["#ffd8ef", "#ffe7cc", "#ddf2e2", "#e8f1fe", "#f4e1ff"];
+let colors = ["#ffd8ef", "#ffe7cc", "#ddf2e2", "#e8f1fe", "#f4e1ff", "#ffffff"];
 let messages = [
   "Trove rocks!",
   "Trove rolls!",
   "Trove sucks!",
   "Trove means luxury.",
   "Trove has trillions of dollars.",
+  "Trove forever!"
 ];
 let spanElement = document.getElementById("trove-forever");
 let imageElement = document.getElementById("draggableImage");
@@ -52,4 +53,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 
   changeImage(); // set the initial image
+});
+
+//link to external pages
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('tickets').addEventListener('click', function() {
+        window.location.href = 'https://ci.ovationtix.com/219/production/1165345';
+    });
+
+    document.getElementById('information').addEventListener('click', function() {
+        window.location.href = 'https://here.org/shows/drivethespeedlimit/';
+    });
+
+    document.getElementById('email').addEventListener('click', function() {
+        window.location.href = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSeUo-BIRcD_I4Y-5zeyYONML5TOWhqcebc8oD1-5g57Y2bw4w/viewform';
+    });
 });
