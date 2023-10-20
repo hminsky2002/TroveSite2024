@@ -23,9 +23,11 @@ imageElement.addEventListener("click", function () {
 
 window.addEventListener("DOMContentLoaded", (event) => {
   var imageSources = [
-    "img/Trinket_1.jpg",
-    "img/Trinket_2.jpg",
+    "img/Trinket_5.png",
+    "img/Trinket_4.png",
     "img/Trinket_3.jpg",
+    "img/Trinket_2.jpg",
+    "img/Trinket_1.jpg",
     "img/mrticket.gif",
   ];
   var currentImageIndex = 0;
@@ -59,7 +61,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //link to external pages
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('tickets').addEventListener('click', function() {
-        window.location.href = 'https://ci.ovationtix.com/219/production/1165345';
+        window.location.href = 'https://thetanknyc.org/calendar-1/the-last-annual-spelling-bee';
     });
 
     document.getElementById('information').addEventListener('click', function() {

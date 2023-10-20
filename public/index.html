@@ -22,9 +22,15 @@ send feedback to trovetransmissions@gmail.com at gmail dot com
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trove</title>
-    <meta name="description" content="Trove is a New York City-based theatre and live arts collective. We create radical, delightful, and really good art with and for the people we love.">
-    <meta name="keywords" content="Trove, Theater, New York, Live Arts, Collective, Community">
-    <meta name="author" content="Trove Theater Company">
+    <meta
+      name="description"
+      content="Trove Theater Company is a New York City-based theatre and live arts collective. We create radical, delightful, and really good art with and for the people we love."
+    />
+    <meta
+      name="keywords"
+      content="Trove, Theater, Trove Theater Company, New York, Live Arts, Collective, Community"
+    />
+    <meta name="author" content="Trove Theater Company" />
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -32,13 +38,14 @@ send feedback to trovetransmissions@gmail.com at gmail dot com
   <body>
     <div id="navbar">
       <ul>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#treasures">TREASURES</a></li>
-        <li><a href="#trinkets">TRINKETS</a></li>
-        <li><a href="#transmissions">TRANSMISSIONS</a></li>
+        <li id="aboutli">ABOUT</li>
+        <li id="treasuresli">TREASURES</li>
+        <li id="trinketsli">TRINKETS</li>
+        <li id="transmissionsli">TRANSMISSIONS</li>
       </ul>
     </div>
     <div class="mainHeader" id="about">
+      <img src="img/arrow1rightorange.gif" alt="arrow" id="arrow" />
       <img src="img/logo.png" alt="logo" id="draggableImage" />
       <h2>Trove</h2>
     </div>
@@ -51,81 +58,95 @@ send feedback to trovetransmissions@gmail.com at gmail dot com
       we love. <span id="trove-forever">Trove forever!</span>
     </div>
     <div class="information">
-      Our next project is Drive the Speed Limit, August 3-5 at HERE Arts Center.
+      Our next project is The Last Annual Spelling Bee, October 22 at The Tank.
+      It’s not theatre, it’s not a gimmick, it’s just a spelling bee
     </div>
     <div class="gif-container">
-        <div class="gif-item" id="tickets">
-          <img class="gif" src="img/ticket3.gif" alt="GIF 1">
-          <p>Tickets</p>
-        </div>
-        <div class="gif-item" id="information">
-          <img class="gif" src="img/info1.gif" alt="GIF 2">
-          <p>Information</p>
-        </div>
+      <div class="gif-item" id="tickets">
+        <img class="gif" src="img/ticket3.gif" alt="GIF 1" />
+        <p>Tickets</p>
       </div>
+      <div class="gif-item" id="information">
+        <img class="gif" src="img/info1.gif" alt="GIF 2" />
+        <p>Information</p>
+      </div>
+    </div>
     <div class="sectionHeader" id="treasures">Treasures</div>
     <div class="information">
       Treasures are full-length, public performances, offering space for artists
       to present their work.
     </div>
     <div class="latestPoster">
-      <img src="img/DTSL.png" alt="poster for drive the speed limit play" />
+      <img src="img/SpellingBeePoster.png" alt="poster for drive the speed limit play" />
     </div>
 
     <div class="information">
-      Our first Treasure is Drive the Speed Limit, written by Penelope Gould and
-      directed by Marina Carlstroem.
-      Drive the Speed Limit is a play about Eve, a chronically ill and fat
-      teenager struggling to understand her body while navigating her artist
-      mother and wacky grandmother’s opposing views of what it looks and feels
-      like to be healthy.
-      Moving between the doctor’s office, school, and home in the passenger
-      seat, Eve sifts through her days while in pain.
-      Shadow puppets animate what is going on in her body, making this battle
-      visible.
-      Everyone responds to Eve’s sickness in their own way. Her mother is unable
-      to find her artistic spark.
-      Her grandmother dives deeper into her faith. The doctors don’t accept her
-      insurance.
+      No theatre. No gimmicks. Just a spelling bee. Twenty-five people competing
+      for fame, glory, and a big doughnut, cheered on by their friends, family,
+      and peers. We care about meaning, but tonight we care about spelling.
     </div>
     <div class="sectionHeader" id="trinkets">Trinkets</div>
     <div class="information">
-        Trinkets are short, generative workshops led by an artist who wants to open up their creative process to others.
+      Trinkets are short, generative workshops led by an artist who wants to
+      open up their creative process to others.
     </div>
     <div class="carousel-container">
-        <button class="carousel-btn left-btn"><img src="img/leftarrow.png" alt="Left Arrow"></button>
-        <img class="carousel-img" src="img/Trinket_1.jpg" alt="Carousel Image">
-        <button class="carousel-btn right-btn"><img src="img/rightarrow.png" alt="Right Arrow"></button>
+      <button class="carousel-btn left-btn">
+        <img src="img/leftarrow.png" alt="Left Arrow" />
+      </button>
+      <img class="carousel-img" src="img/Trinket_1.jpg" alt="Carousel Image" />
+      <button class="carousel-btn right-btn">
+        <img src="img/rightarrow.png" alt="Right Arrow" />
+      </button>
     </div>
     <div class="sectionHeader" id="transmissions">Transmissions</div>
     <div class="information">
       Join our email list to be notified about public performances and
       opportunities to get involved with Trove!
     </div>
-    <img id="email" class="email clickable-image" src="img/e_mail.gif">
-    <div class="information">
-        (Click me!)
-    </div>
-    <script  src="main.js" id="email"></script>
+    <img id="email" class="email clickable-image" src="img/e_mail.gif" />
+    <div class="information">(Click me!)</div>
+    <script src="main.js" id="email"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
     <script>
-      $(document).ready(function () {
-        $('a[href^="#"]').on("click", function (e) {
-          e.preventDefault();
+      const lenis = new Lenis({});
 
-          var target = this.hash;
-          var $target = $(target);
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
 
-          $("html, body")
-            .stop()
-            .animate(
-              {
-                scrollTop: $target.offset().top - 80,
-              },
-              900,
-              "swing"
-            );
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+      document.getElementById("aboutli").addEventListener("click", function () {
+        lenis.scrollTo("#about", {
+          duration: 1.2, // You can customize the duration as needed
         });
       });
+      document
+        .getElementById("treasuresli")
+        .addEventListener("click", function () {
+          lenis.scrollTo("#treasures", {
+            duration: 1.2, // You can customize the duration as needed
+          });
+        });
+      document
+        .getElementById("trinketsli")
+        .addEventListener("click", function () {
+          lenis.scrollTo("#trinkets", {
+            duration: 1.2, // You can customize the duration as needed
+          });
+        });
+      document
+        .getElementById("transmissionsli")
+        .addEventListener("click", function () {
+          lenis.scrollTo("#transmissions", {
+            duration: 1.2, // You can customize the duration as needed
+          });
+        });
     </script>
   </body>
 </html>

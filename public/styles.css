@@ -182,7 +182,9 @@ p{
     height: 40px;
   }
 
-
+#arrow{
+    width: 30px;
+}
 @media screen and (min-width: 600px) {
     .mainHeader img {
         width: 20%;
