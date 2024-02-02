@@ -1,22 +1,23 @@
-import { HOME_QUERY } from "@/sanity/lib/queries";
-import { getClient } from "../sanity/lib/client";
-import { token } from "../sanity/lib/token";
-import { cache } from 'react'
 
-import Home from './_components/Home'
+import { getHome } from "../sanity/sanity-utils";
+import { cache } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { PortableText } from "@portabletext/react";
 
 export default async function IndexPage() {
-  const data = await getHome()
+  const data = await getHome();
+  const components = {
+    block: {
+      normal: ({ children }) => <p>{children}</p>,
+    },
+  };
   return (
-    <Home props={data}/>
+    <main>
+      <PortableText value={data.bio} components={components}/>
+      <img src={data.image} alt="just a fun image"/>
+      <PortableText value={data.transmissions} components={components}/>
+      <a href={data.email}>join email list</a>
+    </main>
   );
 }
-
-export const getHome = cache(async () => {
-  const client = getClient(token);
-  const data = await client.fetch(HOME_QUERY);
-  return {
-    data
-  };
-})
-
