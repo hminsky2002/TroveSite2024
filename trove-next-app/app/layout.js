@@ -22,4 +22,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-export const revalidate = 60;
+export const revalidate = 6;
