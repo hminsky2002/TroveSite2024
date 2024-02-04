@@ -26,3 +26,38 @@ export async function getTreasure() {
     }`
   );
 }
+
+export async function getTrinkets() {
+  return client.fetch(
+    groq`*[_type == "trinkets"][0]{
+        top_bio,
+        trinkets[]{
+          "url":asset->url
+        },
+        "bottom_bio":Bottom_bio,
+        "button_image": button_image.asset->url
+    }`
+  );
+}
+
+export async function getTeam() {
+    return client.fetch(
+      groq`*[_type == "team"][0]{
+          blurb,
+          "cards": team_cards[]->{
+              id,
+              name,
+              role,
+              bio,
+              "image": image.asset->url
+          }
+      }`
+    )
+};
+export async function getTriangle() {
+    return client.fetch(
+      groq`*[_type == "triangle"][0]{
+          "blurb":triangle_blurb
+      }`
+    )
+};
