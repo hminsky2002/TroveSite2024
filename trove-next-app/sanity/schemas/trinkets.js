@@ -16,10 +16,17 @@ const trinkets = {
       of: [{ type: "block" }]
     },
     {
-      name: "trinkets",
-      title: "Trinket Images",
-      type: "array",
-      of:[{type: "image"}]
+      title: 'Trinket Cards',
+      name: 'trinket_cards',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {type: 'trinket_card'},
+          ]
+        }
+      ]
     },
     {
         title: "Bottom Bio",

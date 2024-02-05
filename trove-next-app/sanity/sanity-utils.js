@@ -17,7 +17,7 @@ export async function getTreasure() {
     groq`*[_type == "treasures"][0]{
         "blurb" : treasures_blurb,
         "cards": treasure_cards[]->{
-            id,
+          "id":_id,
             title,
             authors,
             info,
@@ -31,8 +31,11 @@ export async function getTrinkets() {
   return client.fetch(
     groq`*[_type == "trinkets"][0]{
         top_bio,
-        trinkets[]{
-          "url":asset->url
+        "cards": trinket_cards[]->{
+          "id":_id,
+          title,
+          "image": image.asset->url,
+          info
         },
         "bottom_bio":Bottom_bio,
         "button_image": button_image.asset->url
@@ -45,7 +48,7 @@ export async function getTeam() {
       groq`*[_type == "team"][0]{
           blurb,
           "cards": team_cards[]->{
-              id,
+              "id":_id,
               name,
               role,
               bio,
