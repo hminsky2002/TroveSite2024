@@ -6,7 +6,11 @@ export default async function IndexPage() {
   const data = await getTreasure();
   const components = {
     block: {
-      normal: ({ children }) => <p className="text-lg">{children}</p>,
+      normal: ({ children }) => {
+        if (children.length === 1 && children[0] === "") {
+          return <br />;
+        } else return <p className="text-l md:text-xl">{children}</p>;
+      },
     },
   };
   return (

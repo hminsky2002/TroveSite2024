@@ -6,9 +6,11 @@ export default async function TeamPage() {
   const data = await getTeam();
   const components = {
     block: {
-      normal: ({ children }) => (
-        <p className="text-xl md:text-2xl">{children}</p>
-      ),
+      normal: ({ children }) => {
+        if (children.length === 1 && children[0] === "") {
+          return <br />;
+        } else return <p className="text-l md:text-xl">{children}</p>;
+      },
     },
   };
   return (
@@ -35,7 +37,7 @@ export default async function TeamPage() {
             <Image
               className="mx-auto sm:w-1/4 w-3/4 h-auto object-cover"
               height={400}
-              widht={400}
+              width={400}
               src={card.image}
               alt="card image"
             />{" "}

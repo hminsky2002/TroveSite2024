@@ -38,6 +38,7 @@ export async function getTrinkets() {
           "image": image.asset->url,
           info
         },
+        email,
         "bottom_bio":Bottom_bio,
         "button_image": button_image.asset->url
     }`

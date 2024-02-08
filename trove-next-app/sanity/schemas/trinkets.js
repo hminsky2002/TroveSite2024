@@ -38,6 +38,10 @@ const trinkets = {
       name:'button_image',
       title:'Button',
       type:'image'
+    },
+    {name: 'email',
+    title: 'Email Link',
+    type: 'url'
     }
   ],
 };
