@@ -3,7 +3,6 @@ import { useState,useEffect } from "react";
 import Image from "next/image";
 
 export default function Logo() {
-    const [index,setIndex] = useState(0);
     const messages = [
         "Trove rocks!",
         "Trove rolls!",
@@ -17,9 +16,6 @@ export default function Logo() {
   const changeBackgroundColor = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     document.body.style.backgroundColor = randomColor;
-    const message = document.getElementById('message');
-    message.textContent = messages[index];
-    setIndex((index + 1) % messages.length);
   };
 
   useEffect(() => {
@@ -31,7 +27,11 @@ export default function Logo() {
   }, []);
 
   return (
-    <div>
+    <div
+        className="flex mx-auto items-center text-center "
+        style={{ maxWidth: "200px" }}
+      >
+     
       <Image
         src="/logo.png"
         width={200}
@@ -40,6 +40,6 @@ export default function Logo() {
         className="w-full cursor-pointer"
         onClick={changeBackgroundColor} // Add onClick event to Image component
       />
-    </div>
+       </div>
   );
 }

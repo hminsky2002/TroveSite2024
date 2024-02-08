@@ -4,7 +4,6 @@ import Autoplay from "embla-carousel-autoplay";
 
 export default function Carousel({ props }) {
   const [emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
-  console.log(props);
   return (
     <div
       className="overflow-hidden w-11/12 md:w-9/12 mx-auto flex items-center justify-center  "

@@ -2,6 +2,7 @@ import "./globals.css";
 import Nav from "./nav";
 import Head from "next/head";
 import { Pixelify_Sans, Inconsolata } from "next/font/google";
+import Logo from "./_componets/logo";
 
 export const metadata = {
   title: "Trove",
@@ -31,6 +32,8 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         <Nav />
+        <Logo />
+
         <div className="children">{children}</div>
       </body>
     </html>

@@ -17,7 +17,7 @@ export default async function TrianglePage() {
       className="flex flex-col sm:mx-auto	items-center text-center mx-10"
       style={{ maxWidth: "800px" }}
     >
-      <h1 className="text-3xl md:text-9xl font-extrabold">TRIANGLE</h1>
+      <h1 className="text-3xl md:text-6xl font-extrabold">TRIANGLE</h1>
       <Image
         src={"/triangle.png"}
         width={600}

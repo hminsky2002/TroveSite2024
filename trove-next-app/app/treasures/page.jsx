@@ -19,7 +19,7 @@ export default async function IndexPage() {
       style={{ maxWidth: "800px" }}
     >
       <div className="flex flex-col items-center mt-10">
-        <h1 className="text-xl sm:text-5xl">TREASURES</h1>
+        <h1 className="text-3xl md:text-6xl">TREASURES</h1>
         <div
           className="text-l sm:text-xl 	mt-5 items-center"
           style={{ maxWidth: "800px" }}

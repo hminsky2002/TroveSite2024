@@ -20,7 +20,7 @@ export default async function TeamPage() {
     >
       <PortableText value={data.blurb} components={components} />
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl">TEAM</h1>
+        <h1 className="text-3xl md:text-6xl">TEAM</h1>
         <div
           className="text-xl mx-auto	items-center"
           style={{ maxWidth: "800px" }}
@@ -35,7 +35,7 @@ export default async function TeamPage() {
             style={{ maxWidth: "1100px" }}
           >
             <Image
-              className="mx-auto sm:w-1/4 w-3/4 h-auto object-cover"
+              className="mx-auto sm:w-1/4 w-3/4 h-auto object-cover sm:pl-10"
               height={400}
               width={400}
               src={card.image}
