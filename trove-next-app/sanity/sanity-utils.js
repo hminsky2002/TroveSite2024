@@ -7,6 +7,7 @@ export async function getHome() {
             bio,
             "image": funImage.asset->url,
             transmissions,
+            "emailImage": emailImage.asset->url,
             email
         }`
   );
@@ -37,6 +38,7 @@ export async function getTrinkets() {
           "image": image.asset->url,
           info
         },
+        email,
         "bottom_bio":Bottom_bio,
         "button_image": button_image.asset->url
     }`
@@ -44,8 +46,8 @@ export async function getTrinkets() {
 }
 
 export async function getTeam() {
-    return client.fetch(
-      groq`*[_type == "team"][0]{
+  return client.fetch(
+    groq`*[_type == "team"][0]{
           blurb,
           "cards": team_cards[]->{
               "id":_id,
@@ -55,12 +57,12 @@ export async function getTeam() {
               "image": image.asset->url
           }
       }`
-    )
-};
+  );
+}
 export async function getTriangle() {
-    return client.fetch(
-      groq`*[_type == "triangle"][0]{
+  return client.fetch(
+    groq`*[_type == "triangle"][0]{
           "blurb":triangle_blurb
       }`
-    )
-};
+  );
+}

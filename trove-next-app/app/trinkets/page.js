@@ -1,24 +1,43 @@
 import { getTrinkets } from "../../sanity/sanity-utils";
 import Carousel from "../_componets/carousel";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
+import Link from "next/link";
 export default async function IndexPage() {
   const data = await getTrinkets();
   const components = {
     block: {
-      normal: ({ children }) => <p className="text-2xl">{children}</p>,
+      normal: ({ children }) => {
+        if (children.length === 1 && children[0] === "") {
+          return <br />;
+        } else return <p className="text-l md:text-xl">{children}</p>;
+      },
     },
   };
   console.log(data);
   return (
-    <main className="flex flex-col mx-auto	items-center text-center" style={{ maxWidth: "800px" }}>
-      <h1 className="text-8xl">TRINKETS</h1>
+    <main
+      className="flex flex-col mx-auto	items-center text-center"
+      style={{ maxWidth: "800px" }}
+    >
+      <h1 className="text-xl sm:text-5xl">TRINKETS</h1>
 
       <PortableText value={data.top_bio} components={components} />
-      
+
       <Carousel props={data.cards} />
-      <h3 className="mx-auto flex items-center justify-center">swipe here</h3>
+      <p className="mx-auto flex items-center justify-center mt-10 mb-10 text-xl md:text-2xl">
+        swipe here
+      </p>
       <PortableText value={data.bottom_bio} components={components} />
-      <img className="h-1/12 w-1/12 items-center justify-center mx-auto" src={data.button_image} alt="card image" />
+      <Link href={data.email} passHref>
+        <Image
+          className="items-center justify-center mx-auto"
+          width={200}
+          height={200}
+          src={data.button_image}
+          alt="card image"
+        />
+      </Link>
     </main>
   );
 }
