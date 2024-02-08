@@ -9,13 +9,13 @@ const home = {
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
     },
     {
       title: "Bio",
       name: "bio",
       type: "array",
-      of: [{ type: "block" }]
+      of: [{ type: "block" }],
     },
     {
       name: "funImage",
@@ -26,14 +26,19 @@ const home = {
       name: "transmissions",
       title: "Transmissions",
       type: "array",
-      of: [{ type: "block" }]
+      of: [{ type: "block" }],
     },
     {
-      name:'email',
-      title:'Email',
-      type:'url'
-    }
+      name: "emailImage",
+      title: "Email Image",
+      type: "image",
+    },
+    {
+      name: "email",
+      title: "Email",
+      type: "url",
+    },
   ],
 };
 
-export default home
+export default home;

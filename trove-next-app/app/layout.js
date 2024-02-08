@@ -1,9 +1,7 @@
-import { Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "./nav";
 import Head from "next/head";
-
-const pixelfy = Pixelify_Sans({ subsets: ["latin"] });
+import { Pixelify_Sans, Inconsolata } from "next/font/google";
 
 export const metadata = {
   title: "Trove",
@@ -13,19 +11,27 @@ export const metadata = {
     "Trove, Theater, Trove Theater Company, New York, Live Arts, Collective, Community",
 };
 
+const pixelfy = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: "--font-pixelfy-sans",
+  display: "swap",
+});
+
+const inconsolata = Inconsolata({
+  subsets: ["latin"],
+  variable: "--font-inconsolata",
+  display: "swap",
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${pixelfy.variable} ${inconsolata.variable}`}>
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
-      <body className={pixelfy.className}>
+      <body>
         <Nav />
-        <div
-          className="children"
-        >
-          {children}
-        </div>
+        <div className="children">{children}</div>
       </body>
     </html>
   );

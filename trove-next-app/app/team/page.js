@@ -6,15 +6,23 @@ export default async function TeamPage() {
   const data = await getTeam();
   const components = {
     block: {
-      normal: ({ children }) => <p>{children}</p>,
+      normal: ({ children }) => (
+        <p className="text-xl md:text-2xl">{children}</p>
+      ),
     },
   };
   return (
-    <main className="flex flex-col mx-auto	items-center text-center" style={{ maxWidth: "800px" }}>
+    <main
+      className="flex flex-col mx-auto	items-center text-center"
+      style={{ maxWidth: "800px" }}
+    >
       <PortableText value={data.blurb} components={components} />
-      <div className="flex flex-col items-center" >
+      <div className="flex flex-col items-center">
         <h1 className="text-3xl">TEAM</h1>
-        <div className="text-xl mx-auto	items-center" style={{ maxWidth: "800px" }}>
+        <div
+          className="text-xl mx-auto	items-center"
+          style={{ maxWidth: "800px" }}
+        >
           <PortableText value={data.blurb} components={components} />
         </div>{" "}
         {/* Center items and stack them vertically */}
@@ -24,8 +32,10 @@ export default async function TeamPage() {
             key={card.id}
             style={{ maxWidth: "1100px" }}
           >
-            <img
+            <Image
               className="mx-auto sm:w-1/4 w-3/4 h-auto object-cover"
+              height={400}
+              widht={400}
               src={card.image}
               alt="card image"
             />{" "}
