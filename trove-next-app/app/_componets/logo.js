@@ -1,17 +1,11 @@
 "use client";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router"; // Import useRouter
+import { usePathname } from "next/navigation";
 
 export default function Logo() {
-    const messages = [
-        "Trove rocks!",
-        "Trove rolls!",
-        "Trove sucks!",
-        "Trove means luxury.",
-        "Trove has trillions of dollars.",
-        "Trove forever!"
-    ];
-
+  const pathname = usePathname();
   // Function to change the background color to a random color
   const changeBackgroundColor = () => {
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -26,12 +20,15 @@ export default function Logo() {
     };
   }, []);
 
+  if (pathname.match("/admin/")) {
+    return <></>;
+  }
+
   return (
     <div
-        className="flex mx-auto items-center text-center "
-        style={{ maxWidth: "200px" }}
-      >
-     
+      className="flex mx-auto items-center text-center"
+      style={{ maxWidth: "200px" }}
+    >
       <Image
         src="/logo.png"
         width={200}
@@ -40,6 +37,6 @@ export default function Logo() {
         className="w-full cursor-pointer"
         onClick={changeBackgroundColor} // Add onClick event to Image component
       />
-       </div>
+    </div>
   );
 }
