@@ -3,7 +3,7 @@ import Nav from "./nav";
 import Head from "next/head";
 import { Pixelify_Sans, Inconsolata } from "next/font/google";
 import Logo from "./_componets/logo";
-
+import Link from "next/link";
 export const metadata = {
   title: "Trove",
   description:
@@ -35,6 +35,15 @@ export default function RootLayout({ children }) {
         <Logo />
 
         <div className="children">{children}</div>
+        <footer className="footer text-sm text-center mt-8">
+          <p>Website spawned by</p>{" "}
+          <Link
+            href="https://harryminsky.com"
+            className="inconsolata hover:text-blue-500"
+          >
+            Harry Minsky
+          </Link>
+        </footer>
       </body>
     </html>
   );

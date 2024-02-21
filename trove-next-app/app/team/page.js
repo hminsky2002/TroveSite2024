@@ -20,7 +20,7 @@ export default async function TeamPage() {
     >
       <PortableText value={data.blurb} components={components} />
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl md:text-6xl">TEAM</h1>
+        <h1 className="text-3xl md:text-6xl mb-4">TEAM</h1>
         <div
           className="text-xl mx-auto	items-center"
           style={{ maxWidth: "800px" }}
