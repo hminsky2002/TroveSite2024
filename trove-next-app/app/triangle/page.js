@@ -8,7 +8,7 @@ export default async function TrianglePage() {
       normal: ({ children }) => {
         if (children.length === 1 && children[0] === "") {
           return <br />;
-        } else return <p className="text-l md:text-xl">{children}</p>;
+        } else return <p className="text-l md:text-xl inconsolata">{children}</p>;
       },
     },
   };
