@@ -21,7 +21,7 @@ export default async function IndexPage() {
       <div className="flex flex-col items-center">
         <h1 className="text-3xl md:text-6xl">TREASURES</h1>
         <div
-          className="text-l sm:text-xl items-center mt-2"
+          className="text-l sm:text-xl items-center"
           style={{ maxWidth: "800px" }}
         >
           <PortableText value={data.blurb} components={components} />
