@@ -19,12 +19,12 @@ export default async function IndexPage() {
       className="flex flex-col mx-auto	items-center text-center"
       style={{ maxWidth: "800px" }}
     >
-      <h1 className="text-3xl md:text-6xl mb-2">TRINKETS</h1>
+      <h1 className="text-3xl md:text-6xl">TRINKETS</h1>
 
       <PortableText value={data.top_bio} components={components} />
 
       <Carousel props={data.cards} />
-      <p className="mx-auto flex items-center justify-center mt-10 mb-10 text-xl md:text-2xl">
+      <p className="mx-auto flex items-center justify-center text-xl md:text-2xl">
         swipe here
       </p>
       <PortableText value={data.bottom_bio} components={components} />
