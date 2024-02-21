@@ -23,8 +23,11 @@ export default async function TrianglePage() {
         width={600}
         height={600}
         alt="trove triangle"
+        className="mt-2"
       />
-      <PortableText value={data.blurb} components={components} />
+      <div className="text-left mt-2">
+        <PortableText value={data.blurb} components={components} />
+      </div>
     </main>
   );
 }
