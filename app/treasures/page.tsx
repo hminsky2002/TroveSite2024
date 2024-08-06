@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import { sanityFetch } from '@/sanity/lib/client';
 import { TREASURE_QUERYResult } from '@/sanity.types';
@@ -25,6 +26,26 @@ export default async function TreasuresPage() {
             <PortableText value={data.blurb} components={components} />
           )}
         </div>{' '}
+        {data?.donationButton && (
+          <Link href="https://www.classy.org/give/592001/#!/donation/checkout">
+            <Image
+              src={data.donationButton}
+              width={200}
+              height={200}
+              alt="button for donations"
+              className="mt-2"
+            />
+          </Link>
+        )}
+        {data?.upperImage && (
+          <Image
+            src={data.upperImage}
+            width={200}
+            height={200}
+            alt="upper image for treasure page"
+            className="mb-8 mt-8 w-2/3 md:w-1/2"
+          />
+        )}
         {data?.cards &&
           data.cards.map((card) => (
             <div

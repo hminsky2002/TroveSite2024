@@ -13,7 +13,7 @@ export default async function TeamPage() {
       className="mx-auto flex flex-col items-center text-center"
       style={{ maxWidth: '800px' }}
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-10">
         <h1 className="mb-4 text-3xl md:text-6xl">TEAM</h1>
         <div
           className="mx-auto items-center text-xl"
@@ -46,6 +46,24 @@ export default async function TeamPage() {
               </div>
             </div>
           ))}
+      </div>
+      <div className='border-t-4 border-black'>
+      {data?.affiliatesBlurb && (
+        <PortableText value={data.affiliatesBlurb} components={components} />
+      )}
+      </div>
+      <div className='text-left'>
+      {data?.affiliatesList && (
+        <div>
+          <ul className='list-disc text-xl inconsolata'>
+            {data.affiliatesList.map((affiliate) => (
+              <li key={affiliate.link}>
+                <a href={affiliate?.link ?? ''}>{affiliate?.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       </div>
     </main>
   );

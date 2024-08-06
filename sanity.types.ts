@@ -193,6 +193,31 @@ export type Team = {
     _key: string;
     [internalGroqTypeReferenceTo]?: 'team_card';
   }>;
+  affiliatesBlurb?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: 'span';
+      _key: string;
+    }>;
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      href?: string;
+      _type: 'link';
+      _key: string;
+    }>;
+    level?: number;
+    _type: 'block';
+    _key: string;
+  }>;
+  affiliatesList?: Array<{
+    _ref: string;
+    _type: 'reference';
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: 'affiliate';
+  }>;
 };
 
 export type Trinkets = {
@@ -323,6 +348,28 @@ export type Treasures = {
     _type: 'block';
     _key: string;
   }>;
+  donationButton?: {
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: 'image';
+  };
+  upperImage?: {
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: 'image';
+  };
   treasure_cards?: Array<{
     _ref: string;
     _type: 'reference';
@@ -368,6 +415,46 @@ export type Home = {
     crop?: SanityImageCrop;
     _type: 'image';
   };
+  donationBlock?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: 'span';
+      _key: string;
+    }>;
+    style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'blockquote';
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      href?: string;
+      _type: 'link';
+      _key: string;
+    }>;
+    level?: number;
+    _type: 'block';
+    _key: string;
+  }>;
+  donationButton?: {
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: 'image';
+  };
+  lowerImage?: {
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: 'image';
+  };
   transmissions?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -397,7 +484,6 @@ export type Home = {
     crop?: SanityImageCrop;
     _type: 'image';
   };
-  email?: string;
 };
 
 export type SanityImageCrop = {
@@ -457,6 +543,16 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
+export type Affiliate = {
+  _id: string;
+  _type: 'affiliate';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  link?: string;
+};
+
 export type AllSanitySchemaTypes =
   | SanityImagePaletteSwatch
   | SanityImagePalette
@@ -476,11 +572,12 @@ export type AllSanitySchemaTypes =
   | SanityImageHotspot
   | SanityImageAsset
   | SanityAssetSourceData
-  | SanityImageMetadata;
+  | SanityImageMetadata
+  | Affiliate;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: HOME_QUERY
-// Query: *[_type == "home"][0]{            bio,            "image": funImage.asset->url,            transmissions,            "emailImage": emailImage.asset->url,            email        }
+// Query: *[_type == "home"][0]{            bio,            "image": funImage.asset->url,            transmissions,            "emailImage": emailImage.asset->url,            donationBlock,            "donationButton": donationButton.asset->url,            "lowerImage": lowerImage.asset->url        }
 export type HOME_QUERYResult = {
   bio: Array<{
     children?: Array<{
@@ -520,10 +617,29 @@ export type HOME_QUERYResult = {
     _key: string;
   }> | null;
   emailImage: string | null;
-  email: string | null;
+  donationBlock: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: 'span';
+      _key: string;
+    }>;
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      href?: string;
+      _type: 'link';
+      _key: string;
+    }>;
+    level?: number;
+    _type: 'block';
+    _key: string;
+  }> | null;
+  donationButton: string | null;
+  lowerImage: string | null;
 } | null;
 // Variable: TREASURE_QUERY
-// Query: *[_type == "treasures"][0]{        "blurb" : treasures_blurb,        "cards": treasure_cards[]->{          "id":_id,            title,            authors,            info,            "image": image.asset->url        }    }
+// Query: *[_type == "treasures"][0]{        "blurb" : treasures_blurb,        "donationButton": donationButton.asset->url,        "upperImage": upperImage.asset->url,        "cards": treasure_cards[]->{          "id":_id,            title,            authors,            info,            "image": image.asset->url        }    }
 export type TREASURE_QUERYResult = {
   blurb: Array<{
     children?: Array<{
@@ -543,6 +659,8 @@ export type TREASURE_QUERYResult = {
     _type: 'block';
     _key: string;
   }> | null;
+  donationButton: string | null;
+  upperImage: string | null;
   cards: Array<{
     id: string;
     title: string | null;
@@ -634,7 +752,7 @@ export type TRINKETS_QUERYResult = {
   button_image: string | null;
 } | null;
 // Variable: TEAM_QUERY
-// Query: *[_type == "team"][0]{          blurb,          "cards": team_cards[]->{              "id":_id,              name,              role,              bio,              "image": image.asset->url          }      }
+// Query: *[_type == "team"][0]{          blurb,          "cards": team_cards[]->{              "id":_id,              name,              role,              bio,              "image": image.asset->url          },          affiliatesBlurb,          "affiliatesList": affiliatesList[]->{            name,            link          }      }
 export type TEAM_QUERYResult = {
   blurb: string | null;
   cards: Array<{
@@ -660,6 +778,28 @@ export type TEAM_QUERYResult = {
       _key: string;
     }> | null;
     image: string | null;
+  }> | null;
+  affiliatesBlurb: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: 'span';
+      _key: string;
+    }>;
+    style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'normal';
+    listItem?: 'bullet' | 'number';
+    markDefs?: Array<{
+      href?: string;
+      _type: 'link';
+      _key: string;
+    }>;
+    level?: number;
+    _type: 'block';
+    _key: string;
+  }> | null;
+  affiliatesList: Array<{
+    name: string | null;
+    link: string | null;
   }> | null;
 } | null;
 // Variable: TRIANGLE_QUERY

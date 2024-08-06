@@ -22,6 +22,31 @@ export const home = defineType({
       name: 'funImage',
       title: 'Fun Image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      title: 'Donation Block',
+      name: 'donationBlock',
+      type: 'array',
+      of: [{ type: 'block' }],
+    }),
+    defineField({
+      name: 'donationButton',
+      title: 'Donation Button',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'lowerImage',
+      title: 'Lower Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'transmissions',
@@ -33,11 +58,6 @@ export const home = defineType({
       name: 'emailImage',
       title: 'Email Image',
       type: 'image',
-    }),
-    defineField({
-      name: 'email',
-      title: 'Email',
-      type: 'url',
     }),
   ],
 });

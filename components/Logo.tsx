@@ -24,18 +24,23 @@ export default function Logo() {
   }
 
   return (
-    <div
-      className="mx-auto flex items-center text-center"
-      style={{ maxWidth: '200px' }}
-    >
-      <Image
-        src="/logo.png"
-        width={200}
-        height={200}
-        alt="trove logo"
-        className="w-full cursor-pointer"
-        onClick={changeBackgroundColor} // Add onClick event to Image component
-      />
+    <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center">
+        <Image
+          src="/arrow1rightorange.gif"
+          width={50}
+          height={50}
+          alt="pointyarrow"
+        />
+        <Image
+          src="/logo.png"
+          width={250}
+          height={250}
+          alt="trove logo"
+          className="cursor-pointer mr-7"
+          onClick={changeBackgroundColor}
+        />
+      </div>
     </div>
   );
 }

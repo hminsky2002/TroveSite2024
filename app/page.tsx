@@ -23,19 +23,34 @@ export default async function IndexPage() {
           width={200}
           height={200}
           alt="just a fun image"
-          className="mt-2"
+          className="mt-2 w-2/3 md:w-1/2"
+        />
+      )}
+      {data?.donationBlock && (
+        <PortableText value={data.donationBlock} components={components} />
+      )}
+      {data?.donationButton && (
+        <Link href="https://www.classy.org/give/592001/#!/donation/checkout">
+          <Image
+            src={data.donationButton}
+            width={200}
+            height={200}
+            alt="button for donations"
+            className='mt-2'
+          />
+        </Link>
+      )}
+      {data?.lowerImage && (
+        <Image
+          src={data.lowerImage}
+          width={200}
+          height={200}
+          alt="lower image for site"
+          className="mt-8 w-2/3 md:w-1/2 mb-8"
         />
       )}
       {data?.transmissions && (
         <PortableText value={data.transmissions} components={components} />
-      )}
-      {data?.email && (
-        <Link
-          href={data.email}
-          className="pb-4 pt-4 text-6xl transition-colors hover:text-green-400"
-        >
-          join email list
-        </Link>
       )}
       {data?.emailImage && (
         <Image
@@ -43,6 +58,7 @@ export default async function IndexPage() {
           width={200}
           height={200}
           alt="just a fun image"
+          className='mt-2'
         />
       )}
     </main>

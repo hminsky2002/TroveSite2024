@@ -40,15 +40,23 @@ export default function RootLayout({
         <Nav />
         <Logo />
 
-        <div className="children">{children}</div>
+        <div className="children mx-8">{children}</div>
         <footer className="footer mt-8 text-center text-sm">
-          <p>Website spawned by</p>{' '}
-          <Link
-            href="https://harryminsky.com"
-            className="inconsolata hover:text-blue-500"
-          >
-            Harry Minsky
-          </Link>
+          <div>
+            <p>contact us!</p>
+            <a href="mailto:trovetransmissions@gmail.com" className="hover:text-blue-400 transition-colors">
+              trovetransmissions@gmail.com
+            </a>
+          </div>
+          <div>
+            <p>Website spawned by</p>{' '}
+            <Link
+              href="https://harryminsky.com"
+              className="inconsolata hover:text-blue-400"
+            >
+              Harry Minsky
+            </Link>
+          </div>
         </footer>
       </body>
     </html>

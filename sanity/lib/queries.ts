@@ -5,11 +5,15 @@ const HOME_QUERY = groq`*[_type == "home"][0]{
             "image": funImage.asset->url,
             transmissions,
             "emailImage": emailImage.asset->url,
-            email
+            donationBlock,
+            "donationButton": donationButton.asset->url,
+            "lowerImage": lowerImage.asset->url
         }`;
 
 const TREASURE_QUERY = groq`*[_type == "treasures"][0]{
         "blurb" : treasures_blurb,
+        "donationButton": donationButton.asset->url,
+        "upperImage": upperImage.asset->url,
         "cards": treasure_cards[]->{
           "id":_id,
             title,
@@ -40,6 +44,11 @@ const TEAM_QUERY = groq`*[_type == "team"][0]{
               role,
               bio,
               "image": image.asset->url
+          },
+          affiliatesBlurb,
+          "affiliatesList": affiliatesList[]->{
+            name,
+            link
           }
       }`;
 
