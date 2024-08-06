@@ -26,5 +26,22 @@ export const team = defineType({
         },
       ],
     }),
+    defineField({
+      name: 'affiliatesBlurb',
+      title: 'Affiliates Blurb',
+      type: 'array',
+      of: [{ type: 'block' }],
+    }),
+    defineField({
+      name: 'affiliatesList',
+      title: 'Affiliates List',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'affiliate' }],
+        },
+      ],
+    }),
   ],
 });

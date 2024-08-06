@@ -17,6 +17,16 @@ export const treasures = defineType({
       of: [{ type: 'block' }],
     }),
     defineField({
+      title: 'Donation Button',
+      name: 'donationButton',
+      type: 'image',
+    }),
+    defineField({
+      title: 'Upper Image',
+      name: 'upperImage',
+      type: 'image',
+    }),
+    defineField({
       title: 'Treasure Cards',
       name: 'treasure_cards',
       type: 'array',

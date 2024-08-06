@@ -1,5 +1,6 @@
 import { type SchemaTypeDefinition } from 'sanity';
 import {
+  affiliate,
   home,
   treasures,
   treasureCard,
@@ -11,6 +12,7 @@ import {
 } from './schemaTypes';
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
+    affiliate,
     home,
     treasures,
     treasureCard,
