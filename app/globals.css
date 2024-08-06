@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+a {
+  font-family: var(--font-pixelfy-sans);
+}
+
+p {
+  font-family: var(--font-inconsolata);
+}
+
+.inconsolata {
+  font-family: var(--font-inconsolata);
+}
