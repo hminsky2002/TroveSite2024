@@ -44,7 +44,10 @@ export default function RootLayout({
         <footer className="footer mt-8 text-center text-sm">
           <div>
             <p>contact us!</p>
-            <a href="mailto:trovetransmissions@gmail.com" className="hover:text-blue-400 transition-colors">
+            <a
+              href="mailto:trovetransmissions@gmail.com"
+              className="transition-colors hover:text-blue-400"
+            >
               trovetransmissions@gmail.com
             </a>
           </div>

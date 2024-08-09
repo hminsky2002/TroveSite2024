@@ -9,6 +9,7 @@ import { components } from '../utils';
 export default async function TreasuresPage() {
   const data = await sanityFetch<TREASURE_QUERYResult>({
     query: TREASURE_QUERY,
+    tags: ['treasures'],
   });
 
   return (

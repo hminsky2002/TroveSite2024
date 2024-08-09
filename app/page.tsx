@@ -7,7 +7,10 @@ import { components } from './utils';
 import type { HOME_QUERYResult } from '@/sanity.types';
 
 export default async function IndexPage() {
-  const data = await sanityFetch<HOME_QUERYResult>({ query: HOME_QUERY });
+  const data = await sanityFetch<HOME_QUERYResult>({
+    query: HOME_QUERY,
+    tags: ['home'],
+  });
 
   return (
     <main
@@ -36,7 +39,7 @@ export default async function IndexPage() {
             width={200}
             height={200}
             alt="button for donations"
-            className='mt-2'
+            className="mt-2"
           />
         </Link>
       )}
@@ -46,7 +49,7 @@ export default async function IndexPage() {
           width={200}
           height={200}
           alt="lower image for site"
-          className="mt-8 w-2/3 md:w-1/2 mb-8"
+          className="mb-8 mt-8 w-2/3 md:w-1/2"
         />
       )}
       {data?.transmissions && (
@@ -58,7 +61,7 @@ export default async function IndexPage() {
           width={200}
           height={200}
           alt="just a fun image"
-          className='mt-2'
+          className="mt-2"
         />
       )}
     </main>
