@@ -8,6 +8,7 @@ import { components } from '../utils';
 export default async function TrianglePage() {
   const data = await sanityFetch<TRIANGLE_QUERYResult>({
     query: TRIANGLE_QUERY,
+    tags: ['triangle'],
   });
 
   return (

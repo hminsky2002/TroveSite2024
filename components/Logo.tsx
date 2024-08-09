@@ -37,7 +37,7 @@ export default function Logo() {
           width={250}
           height={250}
           alt="trove logo"
-          className="cursor-pointer mr-7"
+          className="mr-7 cursor-pointer"
           onClick={changeBackgroundColor}
         />
       </div>

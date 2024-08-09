@@ -6,14 +6,17 @@ import { TEAM_QUERY } from '@/sanity/lib/queries';
 import { components } from '../utils';
 
 export default async function TeamPage() {
-  const data = await sanityFetch<TEAM_QUERYResult>({ query: TEAM_QUERY });
+  const data = await sanityFetch<TEAM_QUERYResult>({
+    query: TEAM_QUERY,
+    tags: ['team'],
+  });
 
   return (
     <main
       className="mx-auto flex flex-col items-center text-center"
       style={{ maxWidth: '800px' }}
     >
-      <div className="flex flex-col items-center mb-10">
+      <div className="mb-10 flex flex-col items-center">
         <h1 className="mb-4 text-3xl md:text-6xl">TEAM</h1>
         <div
           className="mx-auto items-center text-xl"
@@ -47,23 +50,23 @@ export default async function TeamPage() {
             </div>
           ))}
       </div>
-      <div className='border-t-4 border-black'>
-      {data?.affiliatesBlurb && (
-        <PortableText value={data.affiliatesBlurb} components={components} />
-      )}
+      <div className="border-t-4 border-black">
+        {data?.affiliatesBlurb && (
+          <PortableText value={data.affiliatesBlurb} components={components} />
+        )}
       </div>
-      <div className='text-left'>
-      {data?.affiliatesList && (
-        <div>
-          <ul className='list-disc text-xl inconsolata'>
-            {data.affiliatesList.map((affiliate) => (
-              <li key={affiliate.link}>
-                <a href={affiliate?.link ?? ''}>{affiliate?.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className="text-left">
+        {data?.affiliatesList && (
+          <div>
+            <ul className="inconsolata list-disc text-xl">
+              {data.affiliatesList.map((affiliate) => (
+                <li key={affiliate.link}>
+                  <a href={affiliate?.link ?? ''}>{affiliate?.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </main>
   );

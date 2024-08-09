@@ -10,6 +10,7 @@ import { components } from '../utils';
 export default async function IndexPage() {
   const data = await sanityFetch<TRINKETS_QUERYResult>({
     query: TRINKETS_QUERY,
+    tags: ['trinkets'],
   });
 
   return (
