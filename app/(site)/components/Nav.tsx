@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Nav() {
   const pathname = usePathname();
-  if (pathname.match('/admin/')) {
+  if (pathname.match('/admin/') || pathname.match('/hotline')) {
     return <></>;
   }
   return (

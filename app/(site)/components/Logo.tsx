@@ -19,7 +19,7 @@ export default function Logo() {
     [],
   );
 
-  if (pathname.match('/admin/')) {
+  if (pathname.match('/admin/') || pathname.match('/hotline')) {
     return <></>;
   }
 
