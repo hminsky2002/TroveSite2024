@@ -65,5 +65,6 @@ export default async function IndexPage() {
         />
       )}
     </main>
+    
   );
 }

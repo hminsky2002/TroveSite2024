@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Carousel from '@/components/Carousel';
+import Carousel from '@/app/(site)/components/Carousel';
 import { TRINKETS_QUERYResult } from '@/sanity.types';
 import { TRINKETS_QUERY } from '@/sanity/lib/queries';
 import { sanityFetch } from '@/sanity/lib/client';

@@ -26,3 +26,9 @@ p {
 a {
   @apply transition-colors hover:text-blue-500
 }
+
+.starrybackground {
+  background-image: url('/starrybackground.gif');
+  background-size: 30%;
+  background-position: center;
+}

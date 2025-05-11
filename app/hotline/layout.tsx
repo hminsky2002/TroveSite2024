@@ -1,9 +1,6 @@
-import './globals.css';
+import '../globals.css';
 import Head from 'next/head';
 import { Pixelify_Sans, Inconsolata } from 'next/font/google';
-import Link from 'next/link';
-import Logo from '@/components/Logo';
-import Nav from '@/components/Nav';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,33 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${pixelfy.variable} ${inconsolata.variable}`}>
       <Head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="../favicon.ico" />
       </Head>
       <body>
-        <Nav />
-        <Logo />
-
-        <div className="children mx-8">{children}</div>
-        <footer className="footer mt-8 text-center text-sm">
-          <div>
-            <p>contact us!</p>
-            <a
-              href="mailto:trovetransmissions@gmail.com"
-              className="transition-colors hover:text-blue-400"
-            >
-              trovetransmissions@gmail.com
-            </a>
-          </div>
-          <div>
-            <p>Website spawned by</p>{' '}
-            <Link
-              href="https://harryminsky.com"
-              className="inconsolata hover:text-blue-400"
-            >
-              Harry Minsky
-            </Link>
-          </div>
-        </footer>
+        <div className="children">{children}</div>
       </body>
     </html>
   );
